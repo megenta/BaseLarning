@@ -1,4 +1,4 @@
-/**
+/** Asked at RiskEx
 You are given a library with n words (w[0], w[1], ..., w[n - 1]). You 
 choose a word from it, and in each step, remove one letter from this 
 word only if doing so yields a another word in the library. What is the 
