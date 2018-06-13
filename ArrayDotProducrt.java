@@ -1,8 +1,10 @@
-//Asked at Avanade for GS.
-/*Write a program to find the dot product of two array
+/*
+Asked at Avanade for GS.
+Write a program to find the dot product of two array
 a = [1,2,3]
 b = [1,2,3]
 output = 1*1+2*2+3*3 = 1+4+9 = 14
+*/
 import java.lang.*;
 import java.util.Scanner;
 
