@@ -1,0 +1,48 @@
+public class RunLengthEncoding {
+	
+	private static char lastChar = ' ';
+	private static int currentCount = 0;
+	private static int length = 0;
+	private static StringBuilder sb = new StringBuilder();
+	
+	private static void encode(String fullString) {
+
+		char[] baseArray = fullString.toCharArray();
+		length = baseArray.length;
+
+		for(int i=0; i < length ; i++) {
+			process(baseArray[i], i);
+		}
+		System.out.println(sb.toString());
+	}
+	
+	private static void process(char currentChar, int index) {
+		
+		if(index == 0) {
+			lastChar = currentChar;
+			currentCount++;
+		}else if (lastChar == currentChar ){
+			currentCount++;
+		}else if (lastChar != currentChar ){
+			sb.append(currentCount);
+			sb.append(lastChar);
+			currentCount = 1;
+			lastChar = currentChar;
+		}
+		
+		//incase of the last index.
+		if(length == index+1){
+			sb.append(currentCount);
+			sb.append(lastChar);
+			lastChar = currentChar;
+		}
+	}
+	
+	public static void main(String[] args) {
+		RunLengthEncoding.encode("AAABCCC");	//3A1B3C
+		//RunLengthEncoding.encode("A");		  //1A
+		//RunLengthEncoding.encode("ABC");		//1A1B1C
+		//RunLengthEncoding.encode("ABBBBC");	//1A1B1C
+		//RunLengthEncoding.encode("");			  //1A1B1C
+	}
+}
